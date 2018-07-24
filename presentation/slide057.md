@@ -9,16 +9,17 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        • Communications
+        • Configuration
+        • Visibility
+        • Security
+        • Deployments
+        • Resilency
+        • State storage
+        • API design
+        • ...
 
-        @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
-          }
-        }
 
 
 
@@ -98,5 +99,4 @@
 
 
 
-
-slide 035
+slide 057

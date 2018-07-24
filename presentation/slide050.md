@@ -9,14 +9,16 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        -- Configuration :: Spring Cloud Config Client --
 
-        @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
+        @Service
+        public class SomeService {
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
+          @Value("${awesome.config.value}")
+          private String configValue;
+
+          public void doSomething() {
+            log.info("config value: {}", configValue);
           }
         }
 
@@ -99,4 +101,4 @@
 
 
 
-slide 035
+slide 050

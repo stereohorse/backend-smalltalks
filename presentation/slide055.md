@@ -9,16 +9,9 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        • Communications
 
-        @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
-          }
-        }
 
 
 
@@ -98,5 +91,4 @@
 
 
 
-
-slide 035
+slide 055

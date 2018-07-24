@@ -9,17 +9,23 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        -- Discovery :: Zuul --
 
         @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
+        @EnableZuulProxy
+        public class ZuulServer {
 
           public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
+            SpringApplication.run(ZuulServer.class, args);
           }
         }
 
+        --
+        zuul:
+          routes:
+            rule1:
+              path: "/some/service/**"
+              serviceId: another-service-name
 
 
 
@@ -99,4 +105,5 @@
 
 
 
-slide 035
+
+slide 042

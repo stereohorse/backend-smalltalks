@@ -9,16 +9,12 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        -- Configuration --
 
-        @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
+        • Config storage        :: Config Server
+        • Properties overload   :: Config Client
+        • Reload                :: Bus
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
-          }
-        }
 
 
 
@@ -99,4 +95,4 @@
 
 
 
-slide 035
+slide 053

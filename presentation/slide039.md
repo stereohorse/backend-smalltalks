@@ -9,14 +9,24 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        -- Load balancing :: Ribbon + Feign (SB 1) --
 
-        @SpringBootApplication
-        @EnableEurekaServer
+        @FeignClient("another-service-name")
+        public interface SomeClient {
+
+          @GetMapping("/some/endpoint")
+          Data getData();
+        }
+
+        @RestController
         public class EurekaServer {
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
+          @Autowired
+          private SomeClient someClient;
+
+          @PostMapping
+          public void callService() {
+            someClient.getData();
           }
         }
 
@@ -99,4 +109,4 @@
 
 
 
-slide 035
+slide 039

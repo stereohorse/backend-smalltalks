@@ -9,16 +9,14 @@
 
 
 
-        -- Discovery :: Spring Cloud Eureka Server --
+        -- Communications --
 
-        @SpringBootApplication
-        @EnableEurekaServer
-        public class EurekaServer {
+        • Discovery          :: Eureka
+        • Load Balancing
+        • Ingress routing
+        • Circuit breaker
+        • Rate limiting
 
-          public static void main(String... args) {
-            SpringApplication.run(EurekaServer.class, args);
-          }
-        }
 
 
 
@@ -99,4 +97,4 @@
 
 
 
-slide 035
+slide 038

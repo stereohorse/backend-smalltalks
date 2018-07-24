@@ -16,7 +16,7 @@
         • Circuit breaker
         • Ingress routing
         • Rate limiting
-        • Collocation
+        • ...
 
 
 

@@ -393,7 +393,7 @@ Like Java memory management in large scale!
 - Circuit breaker
 - Ingress routing
 - Rate limiting
-- Collocation
+- ...
 
 
 # Problems
@@ -433,7 +433,7 @@ Like Java memory management in large scale!
 public class EurekaServer {
   
   public static void main(String... args) {
-    SpringApplication.run(ApplicationDelivery.class, args);
+    SpringApplication.run(EurekaServer.class, args);
   }
 }
 ```
@@ -447,19 +447,288 @@ public class EurekaServer {
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-public class EurekaServer {
+public class EurekaClient {
 
   @Autowired
   private DiscoveryClient discoveryClient;
 
   @PostMapping
-  public void callService() {
-    this.discoveryClient.getInstances("another-service-name");
+  public void logFirstService() {
+    List<ServiceInstance> instances = this.discoveryClient.getInstances("another-service-name");
+
+    ServiceInstance firstInstance = instances.get(0);
+    log.info("service host: {}", firstInstance.getHost());
+    log.info("service port: {}", firstInstance.getPort());
   }
   
   public static void main(String... args) {
-    SpringApplication.run(ApplicationDelivery.class, args);
+    SpringApplication.run(EurekaClient.class, args);
   }
 }
 ```
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+- Load Balancing
+- Ingress routing
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing
+- Ingress routing
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Load balancing :: Ribbon + Feign (SB 1) --
+
+```java
+@FeignClient("another-service-name")
+public interface SomeClient {
+
+  @GetMapping("/some/endpoint")
+  Data getData();
+}
+
+@RestController
+public class EurekaServer {
+
+  @Autowired
+  private SomeClient someClient;
+
+  @PostMapping
+  public void callService() {
+    someClient.getData();
+  }
+}
+```
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing
+- Ingress routing
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing     :: Ribbon + Feign
+- Ingress routing
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Discovery :: Zuul --
+
+```java
+@SpringBootApplication
+@EnableZuulProxy
+public class ZuulServer {
+  
+  public static void main(String... args) {
+    SpringApplication.run(ZuulServer.class, args);
+  }
+}
+```
+
+```yaml
+--
+zuul:
+  routes:
+    rule1:
+      path: "/some/service/**"
+      serviceId: another-service-name
+```
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing     :: Ribbon + Feign
+- Ingress routing
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing     :: Ribbon + Feign
+- Ingress routing    :: Zuul
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Circuit breaker & Rate limiting :: Hystrix --
+
+```java
+@Service
+public class HystrixExample {
+
+  @Autowired
+  private SomeClient someClient;
+
+  @HystrixCommand(fallbackMethod = "reliable")
+  public Data callService() {
+    return someClient.getData(); 
+  }
+
+  public String reliable() {
+    return "Cloud Native Java (O'Reilly)";
+  }
+}
+```
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing     :: Ribbon + Feign
+- Ingress routing    :: Zuul
+- Circuit breaker
+- Rate limiting
+
+
+# Problems
+
+-- Communications --
+
+- Discovery          :: Eureka
+- Load Balancing     :: Ribbon + Feign
+- Ingress routing    :: Zuul
+- Circuit breaker    :: Hystrix
+- Rate limiting      :: Hystrix
+
+
+# Problems
+
+-- Configuration --
+
+- Config storage
+- Properties overload
+- Reload
+
+
+# Problems
+
+-- Configuration :: Spring Cloud Config Server --
+
+```java
+@SpringBootApplication
+@EnableConfigServer
+public class ConfigServerExample {
+  
+  public static void main(String... args) {
+    SpringApplication.run(ConfigServerExample.class, args);
+  }
+}
+```
+
+
+# Problems
+
+-- Configuration :: Spring Cloud Config Client --
+
+```java
+@Service
+public class SomeService {
+  
+  @Value("${awesome.config.value}")
+  private String configValue;
+
+  public void doSomething() {
+    log.info("config value: {}", configValue);
+  }
+}
+```
+
+
+# Problems
+
+-- Configuration --
+
+- Config storage
+- Properties overload
+- Reload
+
+
+# Problems
+
+-- Configuration --
+
+- Config storage        :: Config Server
+- Properties overload   :: Config Client
+- Reload
+
+
+# Problems
+
+-- Configuration --
+
+- Config storage        :: Config Server
+- Properties overload   :: Config Client
+- Reload                :: Bus
+
+
+# Problems
+
+-- Configuration --
+
+- Config storage        :: Config Server
+- Properties overload   :: Config Client
+- Reload                :: Just restart!
+
+
+# Problems
+
+- Communications
+
+
+# Problems
+
+- Communications
+- Configuration
+
+
+# Problems
+
+- Communications
+- Configuration
+- Visibility
+- Security
+- Deployments
+- Resilency
+- State storage
+- API design
+- ...
 
