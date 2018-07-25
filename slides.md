@@ -72,6 +72,16 @@
 - X Servers
 - Y Apps
 - Z Teams
+- 4 Clusters
+
+
+# Infrastructure
+
+- 3 Datacenters
+- X Servers
+- Y Apps
+- Z Teams
+- 4 Clusters
 
 1 cluster -> 1 ops team
 
@@ -486,15 +496,15 @@ Like Java memory management in large scale!
 - Storage & Leader election -> Zookeeper
 
 
-# Concepts
+# Mesos concepts
 
 
-# Concepts
+# Mesos concepts
 
 - Agents & masters govern all cluster resources
 
 
-# Concepts
+# Mesos concepts
 
 - Agents & masters govern all cluster resources
 - Masters offer resources to frameworks
