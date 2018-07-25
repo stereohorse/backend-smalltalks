@@ -5,14 +5,34 @@
 
 # Context
 
+```clojure
+(def speaker {:name "Viet"
+              :type ["java developer",
+                     "infrastructure engineer"]})
+```
+
 
 # Context
 
+```clojure
+(def speaker {:name "Viet"
+              :type ["java developer",
+                     "infrastructure engineer"]})
+```
+
+- ololo
 - Infrastructure components
 
 
 # Context
 
+```clojure
+(def speaker {:name "Viet"
+              :type ["java developer",
+                     "infrastructure engineer"]})
+```
+
+- ololo
 - Infrastructure components
 - Applications specifics
 
@@ -109,9 +129,69 @@ Solution:
 
 # Resource managers
 
+
+# Resource managers
+
 Examples:
 
-- Google's Kubernetes
+- Kubernetes
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
+- Apache Mesos
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
+- Apache Mesos
+- Hashicorp Nomad
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
+- Apache Mesos
+- Hashicorp Nomad
+- YARN
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
+- Apache Mesos
+- Hashicorp Nomad
+- YARN
+- Docker Swarm
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
+- Apache Mesos
+- Hashicorp Nomad
+- YARN
+- Docker Swarm
+- Borg
+
+
+# Resource managers
+
+Examples:
+
+- Kubernetes
 - Apache Mesos
 - Hashicorp Nomad
 - YARN
@@ -378,10 +458,99 @@ Like Java memory management in large scale!
 ```
 
 
+# Apache Mesos
+
+```
+                                                                        ...................
+                         +----------------+.............................:.........        :
+          ...............| Masters Quorum |................             :        :        :
+          :              +----------------+               :             :  +-----------+  :
+          :                       :                       :             :  | Scheduler |  :
++---------:--------+    +---------:--------+    +---------:--------+    :  +-----------+  :
+|   +----------+   |    |   +----------+   |    |   +----------+   |    :                 :
+|   | Agent 1  |   |    |   | Agent 2  |   |    |   | Agent 3  |   |    :                 :
+|   +----------+   |    |   +----------+   |    |   +----------+   |    :                 :
+| ........:........|....|.........:........|....|.........:........|....:                 :
+| : +-----:----+   |    |   +-----:----+   |    |   +-----:----+   |                      :
+| : | Executor |   |    |   | Executor |   |    |   | Executor |   |                      :
+| : +----------+   |    |   +----------+   |    |   +----------+   |                      :
+| :................|....|..................|....|..................|..........[Framework].:
+|   +----------+   |    |   +----------+   |    |                  |
+|   | App 1    |   |    |   | App 2    |   |    |                  |
+|   +----------+   |    |   +----------+   |    |                  |
+|                  |    |                  |    |                  |
++---------[Node 1]-+    +---------[Node 2]-+    +---------[Node 3]-+
+```
+
+- ololo
+- Storage & Leader election -> Zookeeper
+
+
+# Concepts
+
+
+# Concepts
+
+- Agents & masters govern all cluster resources
+
+
 # Concepts
 
 - Agents & masters govern all cluster resources
 - Masters offer resources to frameworks
+
+
+# Problems
+
+
+# Problems 
+
+-- Communications --
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+- Load Balancing
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+- Load Balancing
+- Circuit breaker
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+- Load Balancing
+- Circuit breaker
+- Ingress routing
+
+
+# Problems
+
+-- Communications --
+
+- Discovery
+- Load Balancing
+- Circuit breaker
+- Ingress routing
+- Rate limiting
 
 
 # Problems
@@ -400,9 +569,49 @@ Like Java memory management in large scale!
 
 -- Communications :: Discovery --
 
+
+# Problems
+
+-- Communications :: Discovery --
+
+- Consul + Nginx
+
+
+# Problems
+
+-- Communications :: Discovery --
+
+- Consul + Nginx
+- Marathon-lb
+
+
+# Problems
+
+-- Communications :: Discovery --
+
 - Consul + Nginx
 - Marathon-lb
 - Spring Cloud Eureka
+
+
+# Spring Cloud
+
+
+# Spring Cloud
+
+```groovy
+dependencies {
+  compile 'org.springframework.cloud:spring-cloud-starter-config'
+  compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+  compile 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
+
+  compile 'org.springframework.cloud:spring-cloud-stream-binder-kafka-streams'
+  compile 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
+  compile 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
+
+  // ...
+}
+```
 
 
 # Spring Cloud
@@ -421,6 +630,11 @@ Like Java memory management in large scale!
 
 - Spring Boot 1 -> Edgware.SR4
 - Spring Boot 2 -> Finchley.RELEASE
+
+
+# Problems
+
+-- Discovery :: Spring Cloud Eureka Server --
 
 
 # Problems
@@ -587,7 +801,7 @@ zuul:
 
 # Problems
 
--- Circuit breaker & Rate limiting :: Hystrix --
+-- Circuit breaker :: Hystrix --
 
 ```java
 @Service
@@ -605,6 +819,20 @@ public class HystrixExample {
     return "Cloud Native Java (O'Reilly)";
   }
 }
+```
+
+
+# Problems
+
+-- Rate limiting :: Hystrix --
+
+```yaml
+hystrix.command:
+  SomeAction:
+    hystrix.threadpool.default:
+      coreSize: 10
+      maximumSize: 13
+      maxQueueSize: 1000
 ```
 
 

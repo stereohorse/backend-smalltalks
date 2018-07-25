@@ -1,19 +1,16 @@
-        '||''|.                  '||      '||
-         ||   || ... ..    ...    || ...   ||    ....  .. .. ..    ....
-         ||...|'  ||' '' .|  '|.  ||'  ||  ||  .|...||  || || ||  ||. '
-         ||       ||     ||   ||  ||    |  ||  ||       || || ||  . '|..
-        .||.     .||.     '|..|'  '|...'  .||.  '|...' .|| || ||. |'..|'
+        
+        ,---.          |    |
+        |---',---.,---.|---.|    ,---.,-.-.,---.
+        |    |    |   ||   ||    |---'| | |`---.
+        `    `    `---'`---'`---'`---'` ' '`---'
 
 
 
+        -- Communications :: Discovery --
 
-
-
-        -- Configuration --
-
-        • Config storage        :: Config Server
-        • Properties overload   :: Config Client
-        • Reload
+        • Consul + Nginx
+        • Marathon-lb
+        • Spring Cloud Eureka
 
 
 

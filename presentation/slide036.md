@@ -1,37 +1,30 @@
-        '||''|.                  '||      '||
-         ||   || ... ..    ...    || ...   ||    ....  .. .. ..    ....
-         ||...|'  ||' '' .|  '|.  ||'  ||  ||  .|...||  || || ||  ||. '
-         ||       ||     ||   ||  ||    |  ||  ||       || || ||  . '|..
-        .||.     .||.     '|..|'  '|...'  .||.  '|...' .|| || ||. |'..|'
+        
+        ,---.               |             ,-.-.
+        |---|,---.,---.,---.|---.,---.    | | |,---.,---.,---.,---.
+        |   ||   |,---||    |   ||---'    | | ||---'`---.|   |`---.
+        `   '|---'`---^`---'`   '`---'    ` ' '`---'`---'`---'`---'
+             |
 
 
-
-
-
-
-        -- Discovery :: Spring Cloud Eureka Client --
-
-        @SpringBootApplication
-        @EnableDiscoveryClient
-        @RestController
-        public class EurekaClient {
-
-          @Autowired
-          private DiscoveryClient discoveryClient;
-
-          @PostMapping
-          public void logFirstService() {
-            List<ServiceInstance> instances = this.discoveryClient.getInstances("another-service-name");
-
-            ServiceInstance firstInstance = instances.get(0);
-            log.info("service host: {}", firstInstance.getHost());
-            log.info("service port: {}", firstInstance.getPort());
-          }
-
-          public static void main(String... args) {
-            SpringApplication.run(EurekaClient.class, args);
-          }
-        }
+                                                                                ...................
+                                 +----------------+.............................:.........        :
+                  ...............| Masters Quorum |................             :        :        :
+                  :              +----------------+               :             :  +-----------+  :
+                  :                       :                       :             :  | Scheduler |  :
+        +---------:--------+    +---------:--------+    +---------:--------+    :  +-----------+  :
+        |   +----------+   |    |   +----------+   |    |   +----------+   |    :                 :
+        |   | Agent 1  |   |    |   | Agent 2  |   |    |   | Agent 3  |   |    :                 :
+        |   +----------+   |    |   +----------+   |    |   +----------+   |    :                 :
+        | ........:........|....|.........:........|....|.........:........|....:                 :
+        | : +-----:----+   |    |   +-----:----+   |    |   +-----:----+   |                      :
+        | : | Executor |   |    |   | Executor |   |    |   | Executor |   |                      :
+        | : +----------+   |    |   +----------+   |    |   +----------+   |                      :
+        | :................|....|..................|....|..................|..........[Framework].:
+        |   +----------+   |    |   +----------+   |    |                  |
+        |   | App 1    |   |    |   | App 2    |   |    |                  |
+        |   +----------+   |    |   +----------+   |    |                  |
+        |                  |    |                  |    |                  |
+        +---------[Node 1]-+    +---------[Node 2]-+    +---------[Node 3]-+
 
 
 

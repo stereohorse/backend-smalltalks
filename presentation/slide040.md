@@ -1,21 +1,13 @@
-        '||''|.                  '||      '||
-         ||   || ... ..    ...    || ...   ||    ....  .. .. ..    ....
-         ||...|'  ||' '' .|  '|.  ||'  ||  ||  .|...||  || || ||  ||. '
-         ||       ||     ||   ||  ||    |  ||  ||       || || ||  . '|..
-        .||.     .||.     '|..|'  '|...'  .||.  '|...' .|| || ||. |'..|'
+        
+        ,---.                         |
+        |    ,---.,---.,---.,---.,---.|--- ,---.
+        |    |   ||   ||    |---'|   ||    `---.
+        `---'`---'`   '`---'`---'|---'`---'`---'
+                                 |
 
 
-
-
-
-
-        -- Communications --
-
-        • Discovery          :: Eureka
-        • Load Balancing
-        • Ingress routing
-        • Circuit breaker
-        • Rate limiting
+        • Agents & masters govern all cluster resources
+        • Masters offer resources to frameworks
 
 
 

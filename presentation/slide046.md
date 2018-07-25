@@ -1,21 +1,17 @@
-        '||''|.                  '||      '||
-         ||   || ... ..    ...    || ...   ||    ....  .. .. ..    ....
-         ||...|'  ||' '' .|  '|.  ||'  ||  ||  .|...||  || || ||  ||. '
-         ||       ||     ||   ||  ||    |  ||  ||       || || ||  . '|..
-        .||.     .||.     '|..|'  '|...'  .||.  '|...' .|| || ||. |'..|'
-
-
-
+        
+        ,---.          |    |
+        |---',---.,---.|---.|    ,---.,-.-.,---.
+        |    |    |   ||   ||    |---'| | |`---.
+        `    `    `---'`---'`---'`---'` ' '`---'
 
 
 
         -- Communications --
 
-        • Discovery          :: Eureka
-        • Load Balancing     :: Ribbon + Feign
-        • Ingress routing    :: Zuul
+        • Discovery
+        • Load Balancing
         • Circuit breaker
-        • Rate limiting
+        • Ingress routing
 
 
 

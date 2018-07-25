@@ -1,21 +1,18 @@
-        '||''|.                  '||      '||
-         ||   || ... ..    ...    || ...   ||    ....  .. .. ..    ....
-         ||...|'  ||' '' .|  '|.  ||'  ||  ||  .|...||  || || ||  ||. '
-         ||       ||     ||   ||  ||    |  ||  ||       || || ||  . '|..
-        .||.     .||.     '|..|'  '|...'  .||.  '|...' .|| || ||. |'..|'
-
-
-
+        
+        ,---.          |    |
+        |---',---.,---.|---.|    ,---.,-.-.,---.
+        |    |    |   ||   ||    |---'| | |`---.
+        `    `    `---'`---'`---'`---'` ' '`---'
 
 
 
         -- Communications --
 
-        • Discovery          :: Eureka
-        • Load Balancing     :: Ribbon + Feign
-        • Ingress routing    :: Zuul
-        • Circuit breaker    :: Hystrix
-        • Rate limiting      :: Hystrix
+        • Discovery
+        • Load Balancing
+        • Circuit breaker
+        • Ingress routing
+        • Rate limiting
 
 
 
