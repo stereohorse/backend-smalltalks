@@ -48,39 +48,29 @@
 # Infrastructure
 
 - 3 Datacenters
-- X Servers
+- 350 Servers
 
 
 # Infrastructure
 
 - 3 Datacenters
-- X Servers
-- Y Apps
+- 350 Servers
+- 4000 Apps
 
 
 # Infrastructure
 
 - 3 Datacenters
-- X Servers
-- Y Apps
-- Z Teams
-
-
-# Infrastructure
-
-- 3 Datacenters
-- X Servers
-- Y Apps
-- Z Teams
+- 350 Servers
+- 4000 Apps
 - 4 Clusters
 
 
 # Infrastructure
 
 - 3 Datacenters
-- X Servers
-- Y Apps
-- Z Teams
+- 350 Servers
+- 4000 Apps
 - 4 Clusters
 
 1 cluster -> 1 ops team
@@ -684,10 +674,6 @@ public class EurekaClient {
     log.info("service host: {}", firstInstance.getHost());
     log.info("service port: {}", firstInstance.getPort());
   }
-  
-  public static void main(String... args) {
-    SpringApplication.run(EurekaClient.class, args);
-  }
 }
 ```
 
@@ -848,6 +834,20 @@ hystrix.command:
 
 # Problems
 
+-- Concurrency limiter :: Hystrix --
+
+```yaml
+hystrix.command:
+  SomeAction:
+    hystrix.threadpool.default:
+      coreSize: 10
+      maximumSize: 13
+      maxQueueSize: 1000
+```
+
+
+# Problems
+
 -- Communications --
 
 - Discovery          :: Eureka
@@ -865,7 +865,7 @@ hystrix.command:
 - Load Balancing     :: Ribbon + Feign
 - Ingress routing    :: Zuul
 - Circuit breaker    :: Hystrix
-- Rate limiting      :: Hystrix
+- Rate limiting
 
 
 # Problems

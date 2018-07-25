@@ -4,9 +4,7 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
-        -- Circuit breaker & Rate limiting :: Hystrix --
+        -- Circuit breaker :: Hystrix --
 
         @Service
         public class HystrixExample {

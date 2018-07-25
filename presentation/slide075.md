@@ -4,14 +4,18 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
+        -- Configuration :: Spring Cloud Config Client --
 
+        @Service
+        public class SomeService {
 
-        -- Configuration --
+          @Value("${awesome.config.value}")
+          private String configValue;
 
-        • Config storage        :: Config Server
-        • Properties overload   :: Config Client
-        • Reload
-
+          public void doSomething() {
+            log.info("config value: {}", configValue);
+          }
+        }
 
 
 

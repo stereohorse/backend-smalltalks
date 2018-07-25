@@ -4,8 +4,6 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Communications :: Discovery --
 
         • Consul + Nginx

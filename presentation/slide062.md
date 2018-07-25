@@ -4,8 +4,6 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Load balancing :: Ribbon + Feign (SB 1) --
 
         @FeignClient("another-service-name")

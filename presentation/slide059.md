@@ -4,8 +4,6 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Discovery :: Spring Cloud Eureka Client --
 
         @SpringBootApplication
@@ -23,10 +21,6 @@
             ServiceInstance firstInstance = instances.get(0);
             log.info("service host: {}", firstInstance.getHost());
             log.info("service port: {}", firstInstance.getPort());
-          }
-
-          public static void main(String... args) {
-            SpringApplication.run(EurekaClient.class, args);
           }
         }
 

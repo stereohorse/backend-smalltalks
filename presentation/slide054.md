@@ -4,8 +4,6 @@
             ||   ||    ||   ||   |    |    |    |   ||   ||   |
         `---'|---'`    ``   '`---|    `---'`---'`---'`---'`---'
              |               `---'
-
-
         dependencies {
           compile 'org.springframework.cloud:spring-cloud-starter-config'
           compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'

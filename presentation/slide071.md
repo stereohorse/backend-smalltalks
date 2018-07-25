@@ -4,13 +4,13 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
+        -- Communications --
 
-
-        -- Configuration --
-
-        • Config storage
-        • Properties overload
-        • Reload
+        • Discovery          :: Eureka
+        • Load Balancing     :: Ribbon + Feign
+        • Ingress routing    :: Zuul
+        • Circuit breaker
+        • Rate limiting
 
 
 

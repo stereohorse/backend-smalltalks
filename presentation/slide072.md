@@ -4,18 +4,14 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
+        -- Communications --
 
+        • Discovery          :: Eureka
+        • Load Balancing     :: Ribbon + Feign
+        • Ingress routing    :: Zuul
+        • Circuit breaker    :: Hystrix
+        • Rate limiting
 
-        -- Configuration :: Spring Cloud Config Server --
-
-        @SpringBootApplication
-        @EnableConfigServer
-        public class ConfigServerExample {
-
-          public static void main(String... args) {
-            SpringApplication.run(ConfigServerExample.class, args);
-          }
-        }
 
 
 

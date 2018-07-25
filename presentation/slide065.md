@@ -4,8 +4,6 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Discovery :: Zuul --
 
         @SpringBootApplication

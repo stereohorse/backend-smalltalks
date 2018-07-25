@@ -4,13 +4,11 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Configuration --
 
-        • Config storage        :: Config Server
-        • Properties overload   :: Config Client
-        • Reload                :: Bus
+        • Config storage
+        • Properties overload
+        • Reload
 
 
 

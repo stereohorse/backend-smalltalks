@@ -4,16 +4,14 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
+        -- Rate limiting :: Hystrix --
 
-
-        -- Communications --
-
-        • Discovery          :: Eureka
-        • Load Balancing     :: Ribbon + Feign
-        • Ingress routing    :: Zuul
-        • Circuit breaker
-        • Rate limiting
-
+        hystrix.command:
+          SomeAction:
+            hystrix.threadpool.default:
+              coreSize: 10
+              maximumSize: 13
+              maxQueueSize: 1000
 
 
 

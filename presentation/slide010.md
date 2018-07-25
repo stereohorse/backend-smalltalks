@@ -4,12 +4,10 @@
         ||   ||    |    ,---|`---.|    |    |   ||    |    |   ||    |---'
         ``   '`    `    `---^`---'`---'`    `---'`---'`---'`---'`    `---'
 
-
-
         • 3 Datacenters
-        • X Servers
-        • Y Apps
-        • Z Teams
+        • 350 Servers
+        • 4000 Apps
+        • 4 Clusters
 
         1 cluster -> 1 ops team
 

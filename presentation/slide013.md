@@ -4,8 +4,6 @@
           |  |    |   ||   ||   ||    |---'`---.
           `  `    `---'`---'`---'`---'`---'`---'o
 
-
-
         • how to distribute resources?
         • separate failure zones?
 

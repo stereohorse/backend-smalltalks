@@ -4,8 +4,6 @@
         |    |    |   ||   ||    |---'| | |`---.
         `    `    `---'`---'`---'`---'` ' '`---'
 
-
-
         -- Discovery :: Spring Cloud Eureka Server --
 
 

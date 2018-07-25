@@ -4,8 +4,6 @@
         |    |   ||   ||    |---' >< |
         `---'`---'`   '`---'`---''  ``---'
 
-
-
         (def speaker {:name "Viet"
                       :type ["java developer",
                              "infrastructure engineer"]})

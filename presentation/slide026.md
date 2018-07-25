@@ -4,8 +4,6 @@
         |  \ | | |    |    |   || | ||   ||   ||   ||---'|   ||    `---.
         `   `` ' '    `---'`---'` ' '|---'`---'`   '`---'`   '`---'`---'
                                      |
-
-
         • Agents on every computing node
         • Masters for orchestration
         • Storage
